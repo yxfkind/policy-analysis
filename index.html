@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全国电力市场规则分析</title>
+<meta name="description" content="全国电力市场规则分析 —— 33个省级市场规则矩阵、现货实效、容量机制、辅助服务、新能源入市政策追踪">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            green: '#1b5e20',
+            light: '#2e7d32',
+            dark: '#0d3d12',
+          },
+          cream: {
+            50: '#faf8f3',
+            100: '#f5f1e8',
+            200: '#ebe3d0',
+            300: '#d9cba8',
+          },
+          amber: {
+            badge: '#b8860b',
+          },
+        },
+        fontFamily: {
+          sans: ['"Noto Sans SC"', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-cream-50 text-gray-800 font-sans">
+
+<!-- 顶部 Banner -->
+<header class="bg-cream-50 border-b-4 border-brand-green sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 py-3">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div>
+        <h1 class="text-xl md:text-2xl font-bold text-brand-dark flex items-center gap-2">
+          <i class="fa fa-bolt text-brand-green"></i>
+          全国电力市场规则分析
+        </h1>
+        <p class="text-xs md:text-sm text-gray-500 mt-0.5">
+          <span id="version-badge" class="inline-block bg-brand-green text-white px-2 py-0.5 rounded text-xs mr-1">v2.8</span>
+          数据时点：<span id="data-date">2026-09-19</span>
+          ｜ 33个省级市场 + 省间 + 全国统一市场
+        </p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span id="update-status" class="text-xs text-gray-500 hidden md:inline">
+          <i class="fa fa-refresh"></i> 自动更新已启用
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 导航 -->
+  <nav class="bg-cream-100 border-t border-cream-200">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex overflow-x-auto gap-1 py-2 nav-scroll" id="main-nav">
+        <!-- 导航按钮由 JS 渲染 -->
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-6">
+
+  <!-- 各视图容器，由 JS 渲染 -->
+  <section id="view-overview" class="view"></section>
+  <section id="view-matrix" class="view hidden"></section>
+  <section id="view-province" class="view hidden"></section>
+  <section id="view-spot" class="view hidden"></section>
+  <section id="view-capacity" class="view hidden"></section>
+  <section id="view-ancillary" class="view hidden"></section>
+  <section id="view-renewable" class="view hidden"></section>
+  <section id="view-interprovincial" class="view hidden"></section>
+  <section id="view-ledger" class="view hidden"></section>
+  <section id="view-versions" class="view hidden"></section>
+
+</main>
+
+<footer class="bg-cream-100 border-t border-cream-200 mt-12">
+  <div class="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
+    <p>全国电力市场规则分析 · 数据仅供参考，引用前请复核官方信源</p>
+    <p class="mt-1">
+      <i class="fa fa-github"></i>
+      <a href="#" class="text-brand-light hover:underline" id="repo-link">GitHub 仓库</a>
+      ｜
+      <i class="fa fa-clock-o"></i>
+      最后更新：<span id="last-update">—</span>
+    </p>
+  </div>
+</footer>
+
+<!-- 省份详情弹窗 -->
+<div id="province-modal" class="fixed inset-0 bg-black/50 z-[100] hidden items-center justify-center p-4">
+  <div class="bg-cream-50 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="sticky top-0 bg-cream-50 border-b border-cream-200 px-6 py-4 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-brand-dark" id="modal-title">省份详情</h3>
+      <button onclick="closeProvinceModal()" class="text-gray-500 hover:text-gray-800 text-2xl leading-none">&times;</button>
+    </div>
+    <div class="p-6" id="modal-body"></div>
+  </div>
+</div>
+
+<script src="data/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

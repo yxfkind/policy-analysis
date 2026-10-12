@@ -1,0 +1,194 @@
+/* 全国电力市场规则分析 - 样式 */
+
+:root {
+  --brand-green: #1b5e20;
+  --brand-light: #2e7d32;
+  --brand-dark: #0d3d12;
+  --cream-50: #faf8f3;
+  --cream-100: #f5f1e8;
+  --cream-200: #ebe3d0;
+  --cream-300: #d9cba8;
+  --amber-badge: #b8860b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--cream-50);
+  line-height: 1.65;
+}
+
+/* 导航滚动条隐藏 */
+.nav-scroll::-webkit-scrollbar { height: 0; }
+.nav-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* 卡片通用 */
+.card {
+  background: #fffdf7;
+  border: 1px solid var(--cream-200);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.card-soft {
+  background: rgba(255,253,247,0.6);
+  border: 1px solid var(--cream-200);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* KPI 卡片 */
+.kpi-card {
+  background: #fffdf7;
+  border: 1px solid var(--cream-200);
+  border-radius: 8px;
+  padding: 14px;
+  transition: transform .15s, box-shadow .15s;
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.kpi-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  line-height: 1.2;
+}
+.kpi-label {
+  font-size: 0.8rem;
+  color: #6b6256;
+  margin-top: 4px;
+}
+
+/* 三色视角徽章 */
+.badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 4px;
+}
+.badge-god { background: #e8f5e9; color: #1b5e20; border: 1px solid #a5d6a7; }   /* 上帝视角 绿 */
+.badge-exec { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }  /* 执行视角 琥珀 */
+.badge-eval { background: #e3f2fd; color: #0d47a1; border: 1px solid #90caf9; }  /* 经评视角 蓝 */
+
+/* 红绿灯状态 */
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.dot-green { background: #2e7d32; }
+.dot-amber { background: #f9a825; }
+.dot-gray  { background: #9e9e9e; }
+
+/* 箱级标注 */
+.box-white { color: #2e7d32; font-weight: 600; }   /* 白箱 */
+.box-gray  { color: #b8860b; font-weight: 600; }   /* 灰箱 */
+.box-black { color: #616161; font-weight: 600; }   /* 黑箱 */
+
+/* 表格 */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.data-table th {
+  background: var(--cream-100);
+  border: 1px solid var(--cream-200);
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--brand-dark);
+  white-space: nowrap;
+}
+.data-table td {
+  border: 1px solid var(--cream-200);
+  padding: 7px 10px;
+  vertical-align: top;
+}
+.data-table tr:nth-child(even) td { background: rgba(245,241,232,0.4); }
+.data-table tr:hover td { background: #fff8e1; }
+
+/* 章节标题 */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 24px 0 12px;
+  padding-left: 12px;
+  border-left: 4px solid var(--brand-green);
+}
+.sub-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--brand-light);
+  margin: 18px 0 10px;
+}
+
+/* 导航按钮 */
+.nav-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  border: 1px solid var(--cream-300);
+  background: transparent;
+  color: #5a5347;
+  cursor: pointer;
+  transition: all .15s;
+}
+.nav-btn:hover { background: var(--cream-100); }
+.nav-btn.active {
+  background: var(--brand-green);
+  color: #fff;
+  border-color: var(--brand-green);
+}
+
+/* 视图切换 */
+.view.hidden { display: none; }
+
+/* 政策文件传导链卡片 */
+.policy-chain {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.policy-card {
+  background: #fffdf7;
+  border: 1px solid var(--cream-200);
+  border-left: 4px solid var(--brand-green);
+  border-radius: 6px;
+  padding: 14px;
+}
+
+/* 流程箭头 */
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--brand-green);
+  font-size: 1.5rem;
+}
+
+/* 矩阵表格省份行可点击 */
+.province-row { cursor: pointer; }
+.province-row:hover { background: #fff8e1 !important; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .kpi-value { font-size: 1.4rem; }
+  .data-table { font-size: 0.78rem; }
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.view { animation: fadeIn .25s ease; }
