@@ -7,9 +7,9 @@ window.__DATA__ = {
 
   // 元信息
   meta: {
-    version: "v3.12",
-    dataDate: "2026-10-13",
-    lastUpdate: "2026-10-13",
+    version: "v3.9",
+    dataDate: "2026-10-12",
+    lastUpdate: "2026-10-12",
     sourceRepo: "policy-analysis"
   },
 
@@ -86,7 +86,7 @@ window.__DATA__ = {
   // ----------------------------------------------------------
   matrix: {
     intro: "六维：①现货状态 ②中长期市场 ③辅助服务 ④容量机制 ⑤储能准入 ⑥新能源入市。绿=机制成熟/已落地，琥珀=试运行/建设中，灰=未开展/待出。点击省份行进入详情。",
-    note: "口径说明：「受电型省份」（京津沪）未独立建设省级现货，按灰标注；河北分南网/冀北、蒙东/蒙西分计，共33个省级市场。单元格为框架级判定，细则参数见省份详情与数据台账。",
+    note: "口径说明：「受电型省份」（京津）未独立建设省级现货，按灰标注；河北分南网/冀北、蒙东/蒙西分计，共33个省级市场。单元格为框架级判定，细则参数见省份详情与数据台账。储能准入判定：绿=已出台正式文件允许独立储能入市并在运行（基于475号文5MW/10MWh准入框架+114号文容量电价清单制），琥珀=调峰等辅助服务试运行或规则试行中，灰=尚无省级准入安排。",
     dims: ["现货状态", "中长期市场", "辅助服务", "容量机制", "储能准入", "新能源入市"],
     // 状态：green / amber / gray
     provinces: [
@@ -96,12 +96,12 @@ window.__DATA__ = {
       { name: "甘肃",       spot:"green", mid:"green", anc:"green", cap:"gray",  storage:"green", renew:"green" },
       { name: "蒙西",       spot:"green", mid:"green", anc:"green", cap:"gray",  storage:"green", renew:"green" },
       { name: "湖北",       spot:"green", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
-      { name: "浙江",       spot:"green", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
+      { name: "浙江",       spot:"green", mid:"green", anc:"amber", cap:"gray",  storage:"green", renew:"green" },
       { name: "河北南网",   spot:"green", mid:"green", anc:"amber", cap:"amber", storage:"amber", renew:"green" },
       { name: "安徽",       spot:"green", mid:"green", anc:"amber", cap:"amber", storage:"amber", renew:"green" },
       { name: "福建",       spot:"green", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
       { name: "陕西",       spot:"green", mid:"green", anc:"green", cap:"amber", storage:"amber", renew:"green" },
-      { name: "宁夏",       spot:"amber", mid:"green", anc:"green", cap:"gray",  storage:"amber", renew:"green" },
+      { name: "宁夏",       spot:"amber", mid:"green", anc:"green", cap:"gray",  storage:"green", renew:"green" },
       { name: "青海",       spot:"amber", mid:"green", anc:"amber", cap:"amber", storage:"amber", renew:"green" },
       { name: "新疆",       spot:"amber", mid:"green", anc:"amber", cap:"amber", storage:"amber", renew:"green" },
       { name: "蒙东",       spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
@@ -113,9 +113,9 @@ window.__DATA__ = {
       { name: "海南",       spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
       { name: "黑龙江",     spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
       { name: "吉林",       spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
-      { name: "辽宁",       spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
+      { name: "辽宁",       spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"green", renew:"green" },
       { name: "江苏",       spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
-      { name: "上海",       spot:"gray",  mid:"green", anc:"amber", cap:"gray",  storage:"gray",  renew:"green" },
+      { name: "上海",       spot:"amber", mid:"green", anc:"amber", cap:"gray",  storage:"amber", renew:"green" },
       { name: "北京",       spot:"gray",  mid:"green", anc:"amber", cap:"gray",  storage:"gray",  renew:"green" },
       { name: "天津",       spot:"gray",  mid:"green", anc:"amber", cap:"gray",  storage:"gray",  renew:"green" },
       { name: "河南",       spot:"amber", mid:"green", anc:"amber", cap:"amber", storage:"amber", renew:"green" },
@@ -208,10 +208,10 @@ window.__DATA__ = {
     },
     "浙江": {
       name: "浙江", spotSince: "2025-08-08",
-      dims: { spot:"green", mid:"green", anc:"amber", cap:"gray", storage:"amber", renew:"green" },
+      dims: { spot:"green", mid:"green", anc:"amber", cap:"gray", storage:"green", renew:"green" },
       mechPrice: { pv: "0.3816", wind: "0.3816" },
-      highlights: ["2025-08-08正式转正", "2026年机制电价竞价已组织（光伏/风电分类出清）"],
-      params: ["竞价平台：集中式走新能源云平台，分布式走网上国网App"],
+      highlights: ["2025-08-08正式转正", "2026年机制电价竞价已组织（光伏/风电分类出清）", "电网侧独立储能正式入市：商业运营统调储能参与现货+调频，非统调仅现货（浙江能源监管办2026年通知）"],
+      params: ["竞价平台：集中式走新能源云平台，分布式走网上国网App", "储能以自计划方式参与，按日选择电能量或调频市场；未按储能身份注册的原则上不予调用"],
       anchors: []
     },
     "安徽": {
@@ -260,7 +260,7 @@ window.__DATA__ = {
       name: "湖南", spotSince: "试运行",
       dims: { spot:"amber", mid:"green", anc:"amber", cap:"gray", storage:"amber", renew:"green" },
       mechPrice: { pv: "0.3750", wind: "0.3300" },
-      highlights: ["现货连续结算试运行中"],
+      highlights: ["现货连续结算试运行中", "储能准入规则已印发试行：新型储能纳入市场注册经营主体，现货细则含独立储能运行参数章节（2025-11系列规则解读）"],
       params: [],
       anchors: []
     },
@@ -274,10 +274,10 @@ window.__DATA__ = {
     },
     "辽宁": {
       name: "辽宁", spotSince: "试运行",
-      dims: { spot:"amber", mid:"green", anc:"amber", cap:"gray", storage:"amber", renew:"green" },
+      dims: { spot:"amber", mid:"green", anc:"amber", cap:"gray", storage:"green", renew:"green" },
       mechPrice: { pv: "0.3000", wind: "0.3300" },
-      highlights: ["东北风电机制电价集体修复，吉林/辽宁容量电价330~370元/kW·年属全国最高档"],
-      params: ["现货：东北区域市场框架下运行"],
+      highlights: ["东北风电机制电价集体修复，吉林/辽宁容量电价330~370元/kW·年属全国最高档", "独立储能全电量入市：可自主选择报量报价竞价或报量不报价自调度模式，按自然年选择（辽发改〔2026〕支持新型储能健康发展通知）"],
+      params: ["现货：东北区域市场框架下运行", "储能不受中长期合约缺额约束，全电量参与现货出清并优先出清"],
       anchors: []
     },
     "吉林": {
@@ -362,12 +362,13 @@ window.__DATA__ = {
     },
     "宁夏": {
       name: "宁夏", spotSince: "试运行",
-      dims: { spot:"amber", mid:"green", anc:"green", cap:"gray", storage:"amber", renew:"green" },
+      dims: { spot:"amber", mid:"green", anc:"green", cap:"gray", storage:"green", renew:"green" },
       mechPrice: { pv: "0.2595", wind: "0.2595" },
       highlights: [
         "100MW储能调频年实测约70万元",
         "2h→4h收益倍率1.87（全国最高）",
-        "区内市场化规模约1020亿千瓦时，24时段分时签约"
+        "区内市场化规模约1020亿千瓦时，24时段分时签约",
+        "独立储能正式准入：上下网电量独立分时计量，分别以发电/用户身份参与市场（2026年中长期交易通知）"
       ],
       params: ["现货：连续结算试运行V2.0（2026-04-01起）", "调频：5~15元/MW，日前+日内15分钟出清"],
       anchors: []
@@ -774,6 +775,7 @@ window.__DATA__ = {
   // 版本路标
   // ----------------------------------------------------------
   versions: [
+    { version: "v3.9", date: "2026-10-13", changes: "储能准入维度核实更新：浙江（电网侧独立储能入市通知，商业运营储能参与现货+调频）、辽宁（支持新型储能健康发展通知，全电量报量报价/报量不报价双模式）、宁夏（2026年中长期通知，发电/用户双身份准入）由琥珀升绿；修正上海矩阵与详情不一致（现货/储能准入统一为试运行琥珀）；口径说明补充储能准入三色判定标准（475号文+114号文框架）。" },
     { version: "v3.7", date: "2026-10-12", changes: "现货实效Q3数据省份数量翻倍：Q3月度价差从8条增至16条，新增青海8月170/7月190、山西9月260~656/308~609/2024抽蓄194、辽宁9月-47~398/314/259均价、浙江调峰补偿160；Q3收益锚点同步扩至17条（含广东H1结算130）。覆盖省份从5个增至9个（粤青晋辽蒙鲁甘陕浙）。" },
     { version: "v3.6", date: "2026-10-12", changes: "现货实效板块全面更新：新增Q3月度价差数据表（广东8月日前232/实时204、蒙西9月145~586/315~472、山东9月349~477、甘肃130、陕西400）；新增Q3收益月度锚点（甘肃年化3800万=容量1800+电能量1500+调频500~1000）；新增新能源利用率区块（1-8月装机19.92亿kW/发电量1.71万亿kWh占比23.8%）；出清上下限新增山东征求意见稿（下限拟降至-140元/MWh）。" },
     { version: "v3.5", date: "2026-10-12", changes: "数据台账扩容：从15条增至23条；新增蒙西9月现货周报(白箱)、甘肃储能年度价差130元(白箱)、广东2025年价差0.15元(白箱)、1-8月风光装机/发电量/交易电量增速(白箱)、山东10月分时电价最大价差约1元(白箱)；补充利用率/装机数据的视角和分母口径。" },
