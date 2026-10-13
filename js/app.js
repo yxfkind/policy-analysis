@@ -131,6 +131,11 @@ function renderMatrix() {
     <div class="card mb-4">
       <p class="text-xs text-gray-500">${m.note}</p>
     </div>
+    <div class="flex flex-wrap gap-4 mb-3 text-sm">
+      <span>${dot('green')}机制成熟/已落地</span>
+      <span>${dot('amber')}试运行/建设中</span>
+      <span>${dot('gray')}未开展/待出</span>
+    </div>
     <div class="card overflow-x-auto">
       <table class="data-table">
         <thead>
@@ -153,11 +158,6 @@ function renderMatrix() {
           `).join('')}
         </tbody>
       </table>
-    </div>
-    <div class="flex flex-wrap gap-4 mt-4 text-sm">
-      <span>${dot('green')}机制成熟/已落地</span>
-      <span>${dot('amber')}试运行/建设中</span>
-      <span>${dot('gray')}未开展/待出</span>
     </div>
   `;
   document.getElementById('view-matrix').innerHTML = html;
