@@ -25,8 +25,7 @@ window.__DATA__ = {
     { id: "ancillary",       label: "辅助服务",       icon: "fa-wrench" },
     { id: "renewable",       label: "新能源入市",     icon: "fa-leaf" },
     { id: "interprovincial", label: "省间与全国",     icon: "fa-exchange" },
-    { id: "ledger",          label: "数据台账",       icon: "fa-book" },
-    { id: "versions",        label: "版本路标",       icon: "fa-flag" }
+    { id: "ledger",          label: "数据台账",       icon: "fa-book" }
   ],
 
   // ----------------------------------------------------------
