@@ -7,9 +7,9 @@ window.__DATA__ = {
 
   // 元信息
   meta: {
-    version: "v4.29",
-    dataDate: "2026-11-07",
-    lastUpdate: "2026-11-07",
+    version: "v4.30",
+    dataDate: "2026-11-08",
+    lastUpdate: "2026-11-08",
     sourceRepo: "policy-analysis"
   },
 
